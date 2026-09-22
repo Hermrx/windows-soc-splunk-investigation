@@ -1,0 +1,9 @@
+index=windows source="WinEventLog:Security"
+| rex field=_raw "<EventID>(?<EventID>[0-9]+)</EventID>"
+| search EventID IN (4720,4732,4698)
+| rex field=_raw "<Data Name='TargetUserName'>(?<TargetUserName>[^<]+)</Data>"
+| rex field=_raw "<Data Name='MemberName'>(?<MemberName>[^<]+)</Data>"
+| rex field=_raw "<Data Name='TaskName'>(?<TaskName>[^<]+)</Data>"
+| table _time host EventID TargetUserName MemberName TaskName
+| sort _time
+

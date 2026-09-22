@@ -1,0 +1,9 @@
+type,value,context,disposition
+IPv4,192.168.56.102,Source of five controlled SMB authentication failures,Lab test host
+IPv4,192.168.56.103,Monitored Windows endpoint,Lab asset
+Hostname,WIN-ENDPOINT,Endpoint investigated,Lab asset
+Username,victim.user,Target of successful and failed authentication activity,Controlled test account
+Username,svc_backup,Account created and added to Administrators,Controlled test account
+Process,powershell.exe,Executed with ExecutionPolicy Bypass,Review command line
+Scheduled Task,Windows Update Check Service,Task created to simulate persistence,Controlled test artifact
+

@@ -1,0 +1,9 @@
+index=windows earliest=-10m latest=now source="WinEventLog:Security"
+| rex field=_raw "<EventID>(?<EventID>[0-9]+)</EventID>"
+| search EventID=4625
+| rex field=_raw "<Data Name='TargetUserName'>(?<TargetUserName>[^<]+)</Data>"
+| rex field=_raw "<Data Name='IpAddress'>(?<SourceIP>[^<]+)</Data>"
+| stats count as FailedAttempts earliest(_time) as FirstSeen latest(_time) as LastSeen by host TargetUserName SourceIP
+| where FailedAttempts >= 5
+| convert ctime(FirstSeen) ctime(LastSeen)
+

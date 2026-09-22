@@ -1,0 +1,8 @@
+index=windows earliest=-10m latest=now source="WinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex field=_raw "<EventID>(?<EventID>[0-9]+)</EventID>"
+| search EventID=1
+| rex field=_raw "<Data Name='Image'>(?<Image>[^<]+)</Data>"
+| rex field=_raw "<Data Name='CommandLine'>(?<CommandLine>[^<]+)</Data>"
+| search CommandLine="*ExecutionPolicy Bypass*"
+| table _time host Image CommandLine
+

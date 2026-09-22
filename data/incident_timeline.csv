@@ -1,0 +1,14 @@
+timestamp,host,event_id,activity,details,source_ip,mitre_technique
+2026-09-21T17:26:15.032-04:00,WIN-ENDPOINT,4624,Successful logon,victim.user,,T1078
+2026-09-21T17:27:31.357-04:00,WIN-ENDPOINT,Sysmon-1,Suspicious PowerShell,ExecutionPolicy Bypass reconnaissance commands,,T1059.001
+2026-09-21T17:29:46.622-04:00,WIN-ENDPOINT,4720,Local account created,svc_backup,,T1136.001
+2026-09-21T17:29:46.691-04:00,WIN-ENDPOINT,4732,Account added to Administrators,svc_backup SID,,T1098
+2026-09-21T17:29:48.149-04:00,WIN-ENDPOINT,4698,Scheduled task created,Windows Update Check Service,,T1053.005
+2026-09-21T17:48:46.311-04:00,WIN-ENDPOINT,4625,Failed logon,victim.user,192.168.56.102,T1110.001
+2026-09-21T17:48:50.589-04:00,WIN-ENDPOINT,4625,Failed logon,victim.user,192.168.56.102,T1110.001
+2026-09-21T17:48:54.875-04:00,WIN-ENDPOINT,4625,Failed logon,victim.user,192.168.56.102,T1110.001
+2026-09-21T17:48:59.500-04:00,WIN-ENDPOINT,4625,Failed logon,victim.user,192.168.56.102,T1110.001
+2026-09-21T17:49:04.119-04:00,WIN-ENDPOINT,4625,Failed logon,victim.user,192.168.56.102,T1110.001
+2026-09-21T18:46:52.356-04:00,WIN-ENDPOINT,Sysmon-1,PowerShell alert validation,ExecutionPolicy Bypass test,,T1059.001
+2026-09-21T18:49:21.117-04:00,WIN-ENDPOINT,Sysmon-1,PowerShell alert validation,ExecutionPolicy Bypass test,,T1059.001
+
